@@ -1,0 +1,43 @@
+<div class="container">
+  
+    <div
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+    >
+      <h2 class="h2">Users List</h2>
+      
+    </div>
+    <div> 
+        <h3>
+            Team Name : {{ TeamDetails.data.teamName }}
+        </h3>
+        <h3>
+            Team Unique Id : {{ TeamDetails.data.uuid }}
+        </h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Role</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of TeamDetails.data.Users; let i = index">
+            <th scope="row">{{ user.fullName }}</th>
+            <td>{{ user.role }}</td>
+            <td class="text-center">
+              <button
+                class="btn btn-sm btn-primary"
+                routerLink="/edit-user/{{ user.id }}"
+              >
+                Edit User
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

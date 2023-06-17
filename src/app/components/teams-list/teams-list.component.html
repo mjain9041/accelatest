@@ -1,0 +1,34 @@
+<div class="container">
+  
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h2 class="h2">Teams List</h2>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Team Name</th>
+          <th scope="col">UUID</th>
+          <th class="text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let team of Teams.data; let i = index">
+          <th scope="row">{{ team.teamName }}</th>
+          <td>{{ team.uuid }}</td>
+          <td class="text-center">
+            <button
+              class="btn btn-sm btn-primary"
+              routerLink="/view-team/{{ team.uuid }}"
+            >
+              View Users
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
